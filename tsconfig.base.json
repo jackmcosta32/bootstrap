@@ -14,7 +14,10 @@
     "skipLibCheck": true,
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
-    "paths": {}
+    "paths": {
+      "@viome/ui": ["libs/ui/src/index.ts"],
+      "@viome/ui/server": ["libs/ui/src/server.ts"]
+    }
   },
   "exclude": ["node_modules", "tmp"]
 }
