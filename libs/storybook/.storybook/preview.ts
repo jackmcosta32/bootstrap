@@ -1,7 +1,8 @@
 // Replace your-renderer with the renderer you are using (e.g., react, vue3)
-import type { Preview } from '@storybook/nextjs';
+import '@viome/ui/styles/global.scss';
+import type { Preview } from '@storybook/react';
 
-const preview = {
+const preview: Preview = {
   // ...rest of preview
   //👇 Enables auto-generated documentation for all stories
   tags: ['autodocs'],

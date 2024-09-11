@@ -1,0 +1,16 @@
+{
+    // File Configs
+    "files.associations": {
+        "*.css": "tailwindcss",
+        "*.scss": "tailwindcss",
+        "*.sass": "tailwindcss"
+    },
+
+    // Tailwind CSS
+    "tailwindCSS.emmetCompletions": true,
+    "tailwindCSS.experimental.classRegex": [
+        ["cva\\(([^)]*)\\)", "[\"'`]([^\"'`]*).*?[\"'`]"],
+        ["cx\\(([^)]*)\\)", "(?:'|\"|`)([^']*)(?:'|\"|`)"],
+        ["Variants \\=([^;]*);", "\"([^\"]*)\""]
+    ]
+}
