@@ -15,6 +15,7 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
+      "@viome/storybook": ["libs/storybook/src/index.ts"],
       "@viome/ui": ["libs/ui/src/index.ts"],
       "@viome/ui/server": ["libs/ui/src/server.ts"]
     }

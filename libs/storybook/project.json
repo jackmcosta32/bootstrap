@@ -1,0 +1,19 @@
+{
+  "name": "storybook",
+  "$schema": "../../node_modules/nx/schemas/project-schema.json",
+  "sourceRoot": "libs/storybook/src",
+  "projectType": "library",
+  "tags": [],
+  "targets": {
+    "build": {
+      "executor": "@nx/js:tsc",
+      "outputs": ["{options.outputPath}"],
+      "options": {
+        "outputPath": "dist/libs/storybook",
+        "main": "libs/storybook/src/index.ts",
+        "tsConfig": "libs/storybook/tsconfig.lib.json",
+        "assets": ["libs/storybook/*.md"]
+      }
+    }
+  }
+}
