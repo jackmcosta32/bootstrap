@@ -22,6 +22,12 @@ module.exports = {
       },
     },
     extend: {
+      lineHeight: {
+        tighter: '1.2',
+        tight: '1.3',
+        snug: '1.4',
+        normal: '1.5',
+      },
       colors: {
         border: 'hsl(var(--border))',
         input: 'hsl(var(--input))',
@@ -56,6 +62,39 @@ module.exports = {
           DEFAULT: 'hsl(var(--card))',
           foreground: 'hsl(var(--card-foreground))',
         },
+        'brand-green': {
+          100: 'hsl(var(--brand-green-100))',
+          200: 'hsl(var(--brand-green-200))',
+          300: 'hsl(var(--brand-green-300))',
+          400: 'hsl(var(--brand-green-400))',
+          500: 'hsl(var(--brand-green-500))',
+        },
+        'detailing-gray': {
+          100: 'hsl(var(--detailing-gray-100))',
+          200: 'hsl(var(--detailing-gray-200))',
+          300: 'hsl(var(--detailing-gray-300))',
+          400: 'hsl(var(--detailing-gray-400))',
+          500: 'hsl(var(--detailing-gray-500))',
+          600: 'hsl(var(--detailing-gray-600))',
+          700: 'hsl(var(--detailing-gray-700))',
+        },
+        'pastel-yellow': {
+          100: 'hsl(var(--pastel-yellow-100))',
+          200: 'hsl(var(--pastel-yellow-200))',
+        },
+        'pastel-red': {
+          100: 'hsl(var(--pastel-red-100))',
+          200: 'hsl(var(--pastel-red-200))',
+        },
+        'pastel-green': {
+          100: 'hsl(var(--pastel-green-100))',
+          200: 'hsl(var(--pastel-green-200))',
+        },
+        'action-red': 'hsl(var(--action-red))',
+        'action-yellow': 'hsl(var(--action-yellow))',
+        'action-green': 'hsl(var(--action-green))',
+        'action-purple': 'hsl(var(--action-purple))',
+        'action-blue': 'hsl(var(--action-blue))',
       },
       borderRadius: {
         lg: `var(--radius)`,
