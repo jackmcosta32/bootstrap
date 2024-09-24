@@ -15,8 +15,10 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@viome/ui/*": ["libs/ui/src/*"],
-      "@viome/ui": ["libs/ui/src/index.ts"]
+      "@viome/presentation": ["libs/presentation/src/index.ts"],
+      "@viome/presentation/*": ["libs/presentation/src/*"],
+      "@viome/ui": ["libs/ui/src/index.ts"],
+      "@viome/ui/*": ["libs/ui/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
