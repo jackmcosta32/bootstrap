@@ -1,9 +1,8 @@
 import * as React from 'react';
-import { cva, type VariantProps } from 'class-variance-authority';
-
 import { cn } from '../../utils/cn';
+import { tv, type VariantProps } from 'tailwind-variants';
 
-const typographyVariants = cva('', {
+const typographyVariants = tv({
   variants: {
     variant: {
       display1:

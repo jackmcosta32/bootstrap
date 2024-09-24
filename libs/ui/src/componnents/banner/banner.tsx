@@ -5,35 +5,33 @@ import { X } from 'lucide-react';
 import { useState } from 'react';
 import { Button } from '../button';
 import { cn } from '../../utils/cn';
-import { cva, type VariantProps } from 'class-variance-authority';
+import { tv, type VariantProps } from 'tailwind-variants';
 
-const bannerVariants = cva(
-  'w-full h-20 p-2 font-medium text-primary-foreground',
-  {
-    variants: {
-      variant: {
-        default: 'bg-foreground',
-        green: 'bg-gradient-to-r from-brand-green-100 to-brand-green-400',
-        red: 'bg-gradient-to-r from-[#e06b84] to-[#bd3750]',
-        rainbow:
-          'bg-gradient-to-r from-action-red from-0% via-action-purple via-50% to-action-green to-100%',
-      },
-      placement: {
-        top: 'top-0 left-0 right-0',
-        bottom: 'bottom-0 left-0 right-0',
-      },
-      position: {
-        fixed: 'fixed z-20',
-        relative: 'relative',
-        sticky: 'sticky z-20',
-        absolute: 'absolute z-20',
-      },
+const bannerVariants = tv({
+  base: 'w-full h-20 p-2 font-medium text-primary-foreground',
+  variants: {
+    variant: {
+      default: 'bg-foreground',
+      green: 'bg-gradient-to-r from-brand-green-100 to-brand-green-400',
+      red: 'bg-gradient-to-r from-[#e06b84] to-[#bd3750]',
+      rainbow:
+        'bg-gradient-to-r from-action-red from-0% via-action-purple via-50% to-action-green to-100%',
     },
-    defaultVariants: {
-      variant: 'default',
+    placement: {
+      top: 'top-0 left-0 right-0',
+      bottom: 'bottom-0 left-0 right-0',
     },
-  }
-);
+    position: {
+      fixed: 'fixed z-20',
+      relative: 'relative',
+      sticky: 'sticky z-20',
+      absolute: 'absolute z-20',
+    },
+  },
+  defaultVariants: {
+    variant: 'default',
+  },
+});
 
 export interface BannerProps
   extends React.HTMLAttributes<HTMLDivElement>,
@@ -141,7 +139,7 @@ export function Banner({
         {closable && (
           <Button
             size="icon"
-            variant="ghost"
+            // variant="ghost"
             aria-label="Close"
             onClick={handleOnClose}
             className="absolute z-10 right-4 rounded-full bg-br"
