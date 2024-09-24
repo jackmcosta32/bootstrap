@@ -14,7 +14,7 @@ const Component = () => {
     {
       children: 'Display 1/Special',
       variant: 'display1',
-      fontFamily: 'serif',
+      fontFamily: 'sans',
       fontWeight: 'light',
       fontStyle: 'italic',
     },
@@ -27,7 +27,7 @@ const Component = () => {
     {
       children: 'Display 2/Special',
       variant: 'display2',
-      fontFamily: 'serif',
+      fontFamily: 'sans',
       fontWeight: 'light',
       fontStyle: 'italic',
     },
@@ -48,7 +48,7 @@ const Component = () => {
     {
       children: 'Headline 1/Special',
       variant: 'h1',
-      fontFamily: 'serif',
+      fontFamily: 'sans',
       fontWeight: 'light',
       fontStyle: 'italic',
     },
@@ -67,7 +67,7 @@ const Component = () => {
     {
       children: 'Headline 2/Special',
       variant: 'h2',
-      fontFamily: 'serif',
+      fontFamily: 'sans',
       fontWeight: 'light',
       fontStyle: 'italic',
     },
@@ -86,7 +86,7 @@ const Component = () => {
     {
       children: 'Headline 3/Special',
       variant: 'h3',
-      fontFamily: 'serif',
+      fontFamily: 'sans',
       fontWeight: 'light',
     },
     {
@@ -104,7 +104,7 @@ const Component = () => {
     {
       children: 'Headline 4/Special',
       variant: 'h4',
-      fontFamily: 'serif',
+      fontFamily: 'sans',
       fontWeight: 'light',
     },
 
