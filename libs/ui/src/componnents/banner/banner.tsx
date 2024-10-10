@@ -139,10 +139,10 @@ export function Banner({
         {closable && (
           <Button
             size="icon"
-            // variant="ghost"
+            variant="ghost"
             aria-label="Close"
             onClick={handleOnClose}
-            className="absolute z-10 right-4 rounded-full bg-br"
+            className="absolute z-10 right-4 rounded-full"
           >
             <X />
           </Button>

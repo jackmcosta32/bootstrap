@@ -17,6 +17,7 @@ const buttonVariants = tv({
       link: 'hover:text-brand-green-200 underline-offset-4 hover:underline active:text-brand-green-300 visited:text-brand-green-300',
       destructive:
         'bg-destructive text-destructive-foreground hover:bg-destructive/80 active:bg-destructive',
+      ghost: 'hover:bg-accent text-muted-foreground hover:text-foreground',
     },
     size: {
       default: 'h-10 px-4 py-2',
