@@ -1,35 +1,49 @@
+'use client';
+
 import {
   FormItem,
+  FormField,
   FormLabel,
   FormControl,
   FormMessage,
+  useFormField,
   FormDescription,
 } from '../../form';
 
-import { forwardRef } from 'react';
 import { Input } from '../../input';
 
 export interface TextFieldProps extends React.ComponentProps<typeof Input> {
+  name: string;
   label?: React.ReactNode;
   description?: React.ReactNode;
 }
 
-const TextField = forwardRef<HTMLInputElement, TextFieldProps>(
-  ({ label, value = '', className, description, ...rest }, ref) => (
-    <FormItem className={className}>
-      {label && <FormLabel>{label}</FormLabel>}
+export const TextField = ({
+  name,
+  label,
+  className,
+  description,
+  ...rest
+}: TextFieldProps) => {
+  const formField = useFormField();
 
-      <FormControl>
-        <Input {...rest} ref={ref} value={value} />
-      </FormControl>
+  return (
+    <FormField
+      name={name}
+      control={formField.control}
+      render={({ field }) => (
+        <FormItem className={className}>
+          {label && <FormLabel>{label}</FormLabel>}
 
-      {description && <FormDescription>{description}</FormDescription>}
+          <FormControl>
+            <Input {...rest} {...field} />
+          </FormControl>
 
-      <FormMessage />
-    </FormItem>
-  )
-);
+          {description && <FormDescription>{description}</FormDescription>}
 
-TextField.displayName = 'TextField';
-
-export { TextField };
+          <FormMessage />
+        </FormItem>
+      )}
+    />
+  );
+};

@@ -2,20 +2,27 @@ import * as React from 'react';
 
 import { cn } from '../../utils/cn';
 
-export interface InputProps
-  extends React.InputHTMLAttributes<HTMLInputElement> {}
+export type InputProps = React.InputHTMLAttributes<HTMLInputElement>;
 
 const Input = React.forwardRef<HTMLInputElement, InputProps>(
-  ({ className, type, ...props }, ref) => (
-    <input
-      type={type}
+  ({ disabled, className, type, children, ...props }, ref) => (
+    <div
+      data-disabled={disabled}
       className={cn(
-        'flex h-10 w-full border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50',
+        'flex flex-nowrap content-center overflow-hidden flex-row w-full border border-input bg-transparent text-sm shadow-sm transition-colors focus-within:ring-1 focus-within:ring-ring data-[disabled="true"]:opacity-50 data-[disabled="true"]:cursor-not-allowed',
         className
       )}
-      ref={ref}
-      {...props}
-    />
+    >
+      <input
+        ref={ref}
+        type={type}
+        disabled={disabled}
+        className="h-10 w-full bg-transparent px-3 py-1 transition-colors file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none"
+        {...props}
+      />
+
+      {children}
+    </div>
   )
 );
 Input.displayName = 'Input';

@@ -1,8 +1,12 @@
+'use client';
+
 import {
   FormItem,
+  FormField,
   FormLabel,
   FormControl,
   FormMessage,
+  useFormField,
   FormDescription,
 } from '../../form';
 
@@ -14,8 +18,6 @@ import {
   SelectContent,
 } from '../../select';
 
-import { forwardRef } from 'react';
-
 type TOptionValuePrimitive = string | number | boolean | undefined;
 
 export type TOption = {
@@ -24,22 +26,20 @@ export type TOption = {
 };
 
 export interface SelectFieldProps
-  extends Omit<
-    React.ComponentProps<typeof Select>,
-    'onValueChange' | 'defaultValue'
-  > {
+  extends React.ComponentProps<typeof Select>,
+    Omit<React.HTMLAttributes<HTMLButtonElement>, 'defaultValue' | 'dir'> {
+  name: string;
   options?: TOption[];
   placeholder?: string;
   label?: React.ReactNode;
   description?: React.ReactNode;
-  onChange?: Pick<React.ComponentProps<typeof Select>, 'onValueChange'>;
 }
 
-const renderOptions = (options: TOption[]) => {
+const renderOptions = (options?: TOption[]) => {
   if (!Array.isArray(options) || !options.length) return null;
 
   const renderedOptions = options.map(({ label, value }) => (
-    <SelectItem key={value} value={value}>
+    <SelectItem key={String(value)} value={value as never}>
       {label}
     </SelectItem>
   ));
@@ -47,31 +47,45 @@ const renderOptions = (options: TOption[]) => {
   return renderedOptions;
 };
 
-const SelectField = forwardRef<HTMLSelectElement, SelectFieldProps>(
-  (
-    { label, options, onChange, className, placeholder, description, ...rest },
-    ref
-  ) => (
-    <FormItem className={className}>
-      {label && <FormLabel>{label}</FormLabel>}
+export const SelectField = ({
+  name,
+  label,
+  options,
+  className,
+  placeholder,
+  description,
+  ...rest
+}: SelectFieldProps) => {
+  const formField = useFormField();
 
-      <FormControl>
-        <Select {...rest} onValueChange={onChange}>
-          <SelectTrigger ref={ref}>
-            <SelectValue placeholder={placeholder} />
-          </SelectTrigger>
+  return (
+    <FormField
+      name={name}
+      control={formField.control}
+      render={({ field }) => (
+        <FormItem className={className}>
+          {label && <FormLabel>{label}</FormLabel>}
 
-          <SelectContent>{renderOptions(options)}</SelectContent>
-        </Select>
-      </FormControl>
+          <FormControl>
+            <Select
+              {...rest}
+              {...field}
+              defaultValue={field.value}
+              onValueChange={field.onChange}
+            >
+              <SelectTrigger>
+                <SelectValue placeholder={placeholder} />
+              </SelectTrigger>
 
-      {description && <FormDescription>{description}</FormDescription>}
+              <SelectContent>{renderOptions(options)}</SelectContent>
+            </Select>
+          </FormControl>
 
-      <FormMessage />
-    </FormItem>
-  )
-);
+          {description && <FormDescription>{description}</FormDescription>}
 
-SelectField.displayName = 'SelectField';
-
-export { SelectField };
+          <FormMessage />
+        </FormItem>
+      )}
+    />
+  );
+};
