@@ -66,20 +66,19 @@ export const SelectField = ({
         <FormItem className={className}>
           {label && <FormLabel>{label}</FormLabel>}
 
-          <FormControl>
-            <Select
-              {...rest}
-              {...field}
-              defaultValue={field.value}
-              onValueChange={field.onChange}
-            >
+          <Select
+            {...rest}
+            defaultValue={field.value}
+            onValueChange={field.onChange}
+          >
+            <FormControl>
               <SelectTrigger>
                 <SelectValue placeholder={placeholder} />
               </SelectTrigger>
+            </FormControl>
 
-              <SelectContent>{renderOptions(options)}</SelectContent>
-            </Select>
-          </FormControl>
+            <SelectContent>{renderOptions(options)}</SelectContent>
+          </Select>
 
           {description && <FormDescription>{description}</FormDescription>}
 
