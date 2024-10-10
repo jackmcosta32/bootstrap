@@ -36,7 +36,11 @@ export const TextField = ({
           {label && <FormLabel>{label}</FormLabel>}
 
           <FormControl>
-            <Input {...rest} {...field} />
+            <Input
+              {...rest}
+              onChange={field.onChange}
+              placeholder={field.value}
+            />
           </FormControl>
 
           {description && <FormDescription>{description}</FormDescription>}

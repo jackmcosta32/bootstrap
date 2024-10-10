@@ -49,7 +49,12 @@ export const PasswordField = ({
           {label && <FormLabel>{label}</FormLabel>}
 
           <FormControl>
-            <Input type={fieldType} {...rest} {...field}>
+            <Input
+              type={fieldType}
+              {...rest}
+              onChange={field.onChange}
+              placeholder={field.value}
+            >
               <Button
                 size="icon"
                 variant="ghost"
