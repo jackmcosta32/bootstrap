@@ -14,6 +14,7 @@
     "lib": "@viome/ui/utils",
     "hooks": "@viome/ui/hooks",
     "utils": "@viome/ui/utils",
+    "ui": "@viome/ui/components",
     "components": "@viome/ui/components"
   }
 }

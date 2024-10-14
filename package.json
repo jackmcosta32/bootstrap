@@ -4,7 +4,8 @@
   "license": "MIT",
   "scripts": {
     "storybook": "nx storybook storybook",
-    "prepare": "husky"
+    "prepare": "husky",
+    "shadcn:add": "TS_NODE_PROJECT=tsconfig.base.json pnpx shadcn@latest add"
   },
   "lint-staged": {
     "{src,modules}/**/*.{js,ts,jsx,tsx,json,html,css,scss}": [

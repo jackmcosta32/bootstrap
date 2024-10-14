@@ -10,6 +10,10 @@ const SelectGroup = SelectPrimitive.Group;
 
 const SelectValue = SelectPrimitive.Value;
 
+const MultipleSelectValue = ({ label }: { label: React.ReactNode }) => (
+  <span>{label}</span>
+);
+
 const SelectTrigger = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Trigger>,
   React.ComponentPropsWithoutRef<typeof SelectPrimitive.Trigger>
@@ -111,8 +115,11 @@ SelectLabel.displayName = SelectPrimitive.Label.displayName;
 
 const SelectItem = React.forwardRef<
   React.ElementRef<typeof SelectPrimitive.Item>,
-  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item>
->(({ className, children, ...props }, ref) => (
+  React.ComponentPropsWithoutRef<typeof SelectPrimitive.Item> & {
+    multiple?: boolean;
+    isActive?: boolean;
+  }
+>(({ multiple, isActive, className, children, ...props }, ref) => (
   <SelectPrimitive.Item
     ref={ref}
     className={cn(
@@ -122,9 +129,13 @@ const SelectItem = React.forwardRef<
     {...props}
   >
     <span className="absolute left-2 flex h-3.5 w-3.5 items-center justify-center">
-      <SelectPrimitive.ItemIndicator>
-        <Check className="h-4 w-4" />
-      </SelectPrimitive.ItemIndicator>
+      {multiple ? (
+        isActive && <Check className="h-4 w-4" />
+      ) : (
+        <SelectPrimitive.ItemIndicator>
+          <Check className="h-4 w-4" />
+        </SelectPrimitive.ItemIndicator>
+      )}
     </span>
 
     <SelectPrimitive.ItemText>{children}</SelectPrimitive.ItemText>
@@ -148,6 +159,7 @@ export {
   Select,
   SelectGroup,
   SelectValue,
+  MultipleSelectValue,
   SelectTrigger,
   SelectContent,
   SelectLabel,
