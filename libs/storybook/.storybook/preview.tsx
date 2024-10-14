@@ -17,12 +17,10 @@ const fontDecorator: Decorator = (Story) => {
 export const decorators: Decorator[] = [fontDecorator];
 
 const preview: Preview = {
-  // ...rest of preview
-  //👇 Enables auto-generated documentation for all stories
   tags: ['autodocs'],
   parameters: {
     docs: {
-      toc: true, // 👈 Enables the table of contents
+      toc: true,
     },
   },
 };
