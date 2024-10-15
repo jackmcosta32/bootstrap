@@ -12,12 +12,12 @@ export async function componentGeneratorGenerator(
   tree: Tree,
   options: ComponentGeneratorGeneratorSchema
 ) {
-  const { name, library } = options;
+  const { name, library, type = 'components' } = options;
 
   const kebabCaseName = kebabCase(name);
   const upperFirstName = upperFirst(name);
 
-  const target = `${library}/src/components/${kebabCaseName}`;
+  const target = `${library}/src/${type}/${kebabCaseName}`;
 
   generateFiles(
     tree,

@@ -4,16 +4,5 @@
   "sourceRoot": "libs/presentation/src",
   "projectType": "library",
   "tags": [],
-  "targets": {
-    "build": {
-      "executor": "@nx/js:tsc",
-      "outputs": ["{options.outputPath}"],
-      "options": {
-        "outputPath": "dist/libs/presentation",
-        "main": "libs/presentation/src/index.ts",
-        "tsConfig": "libs/presentation/tsconfig.lib.json",
-        "assets": ["libs/presentation/*.md"]
-      }
-    }
-  }
+  "targets": {}
 }

@@ -13,6 +13,28 @@
       },
       "x-prompt": "What name would you like to use?"
     },
+    "type": {
+      "type": "string",
+      "description": "The type of the component that will be created.",
+      "x-prompt": {
+        "message": "Which type will this component have?",
+        "type": "list",
+        "items": [
+          {
+            "value": "components",
+            "label": "Basic Component"
+          },
+          {
+            "value": "pages",
+            "label": "Page Component"
+          },
+          {
+            "value": "layouts",
+            "label": "Layout Component"
+          }
+        ]
+      }
+    },
     "library": {
       "type": "string",
       "description": "The library where the component will be located.",

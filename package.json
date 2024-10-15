@@ -5,6 +5,7 @@
   "scripts": {
     "storybook": "nx storybook storybook",
     "prepare": "husky",
+    "component:add": "nx g component-generator",
     "shadcn:add": "TS_NODE_PROJECT=tsconfig.base.json pnpx shadcn@latest add"
   },
   "lint-staged": {
