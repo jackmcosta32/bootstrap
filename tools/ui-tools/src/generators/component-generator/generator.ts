@@ -2,29 +2,43 @@ import {
   Tree,
   formatFiles,
   generateFiles,
+  OverwriteStrategy,
   addProjectConfiguration,
 } from '@nx/devkit';
 import * as path from 'path';
-import { kebabCase } from 'lodash';
+import { kebabCase, upperFirst } from 'lodash';
 import { ComponentGeneratorGeneratorSchema } from './schema';
 
 export async function componentGeneratorGenerator(
   tree: Tree,
   options: ComponentGeneratorGeneratorSchema
 ) {
-  const projectRoot = options.project;
+  const { name, project } = options;
 
-  addProjectConfiguration(tree, options.name, {
-    root: projectRoot,
-    projectType: 'library',
-    sourceRoot: `${projectRoot}/src/components/${kebabCase(options.name)}`,
+  const kebabCaseName = kebabCase(name);
+  const upperFirstName = upperFirst(name);
+
+  const target = `${project}/src/components/${kebabCaseName}`;
+
+  addProjectConfiguration(tree, name, {
+    root: project,
+    sourceRoot: project,
     targets: {},
   });
 
-  generateFiles(tree, path.join(__dirname, 'files'), projectRoot, {
-    name: options.name,
-    kebabCase,
-  });
+  generateFiles(
+    tree,
+    path.join(__dirname, 'files'),
+    target,
+    {
+      name,
+      kebabCaseName,
+      upperFirstName,
+    },
+    {
+      overwriteStrategy: OverwriteStrategy.ThrowIfExisting,
+    }
+  );
 
   await formatFiles(tree);
 }

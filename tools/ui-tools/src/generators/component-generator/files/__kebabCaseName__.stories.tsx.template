@@ -1,0 +1,13 @@
+import type { Meta, StoryObj } from '@storybook/react';
+import { <%= upperFirstName %> } from './<%= kebabCaseName %>';
+
+const Story: Meta<typeof <%= upperFirstName %>> = {
+  component: <%= upperFirstName %>,
+  title: 'Components/UI/<%= upperFirstName %>',
+};
+
+export default Story;
+
+export const Primary: StoryObj<typeof <%= upperFirstName %>> = {
+  args: {},
+};
