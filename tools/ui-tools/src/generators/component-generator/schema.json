@@ -13,12 +13,24 @@
       },
       "x-prompt": "What name would you like to use?"
     },
-    "project": {
+    "library": {
       "type": "string",
-      "description": "The project where the component will be located.",
-      "x-prompt": "Which project will this component be located in?",
-      "x-dropdown": "projects"
+      "description": "The library where the component will be located.",
+      "x-prompt": {
+        "message": "Which library will this component be located in?",
+        "type": "list",
+        "items": [
+          {
+            "value": "libs/ui",
+            "label": "UI Library"
+          },
+          {
+            "value": "libs/presentation",
+            "label": "Presentation Library"
+          }
+        ]
+      }
     }
   },
-  "required": ["name", "project"]
+  "required": ["name", "library"]
 }

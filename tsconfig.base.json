@@ -18,6 +18,7 @@
       "@viome/presentation": ["libs/presentation/src/index.ts"],
       "@viome/presentation/*": ["libs/presentation/src/*"],
       "@viome/ui": ["libs/ui/src/index.ts"],
+      "@viome/ui-tools": ["tools/ui-tools/src/index.ts"],
       "@viome/ui/*": ["libs/ui/src/*"]
     }
   },
