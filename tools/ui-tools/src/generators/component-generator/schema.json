@@ -1,0 +1,24 @@
+{
+  "$schema": "https://json-schema.org/schema",
+  "$id": "ComponentGenerator",
+  "title": "name",
+  "type": "object",
+  "properties": {
+    "name": {
+      "type": "string",
+      "description": "The name of the given component.",
+      "$default": {
+        "$source": "argv",
+        "index": 0
+      },
+      "x-prompt": "What name would you like to use?"
+    },
+    "project": {
+      "type": "string",
+      "description": "The project where the component will be located.",
+      "x-prompt": "Which project will this component be located in?",
+      "x-dropdown": "projects"
+    }
+  },
+  "required": ["name", "project"]
+}

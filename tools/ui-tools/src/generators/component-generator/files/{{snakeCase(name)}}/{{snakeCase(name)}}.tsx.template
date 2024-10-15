@@ -1,0 +1,14 @@
+import { cn } from '@viome/ui/utils/cn';
+
+export interface <%= name %>Props 
+  extends React.HTMLAttributes<HTMLDivElement> {}
+
+export const <%= name %> = ({ className, children }: <%= name %>Props) => {
+  return (
+    <div className={cn({ className })}>
+      {children}
+    </div>
+  );
+};
+
+
