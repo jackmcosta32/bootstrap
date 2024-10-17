@@ -5,7 +5,7 @@ export interface <%= upperFirstName %>Props
 
 export const <%= upperFirstName %> = ({ className, children }: <%= upperFirstName %>Props) => {
   return (
-    <div className={cn({ className })}>
+    <div className={cn('', className)}>
       {children}
     </div>
   );
