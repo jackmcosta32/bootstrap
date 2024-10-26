@@ -1,5 +1,5 @@
 import { BaseMock } from './base.mock';
-import type { TUser } from '@viome/domain/models/user.model';
+import type { TUser } from '@template/domain/models/user.model';
 
 export class UserMock extends BaseMock<TUser> {
   public override mockOne(params?: Partial<TUser>): TUser {

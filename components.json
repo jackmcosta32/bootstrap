@@ -11,10 +11,10 @@
     "prefix": ""
   },
   "aliases": {
-    "lib": "@viome/ui/utils/cn",
-    "hooks": "@viome/ui/hooks",
-    "utils": "@viome/ui/utils",
-    "ui": "@viome/ui/components",
-    "components": "@viome/ui/components"
+    "lib": "@template/ui/utils/cn",
+    "hooks": "@template/ui/hooks",
+    "utils": "@template/ui/utils",
+    "ui": "@template/ui/components",
+    "components": "@template/ui/components"
   }
 }

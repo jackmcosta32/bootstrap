@@ -1,5 +1,5 @@
-import { LOCALES } from '@viome/constants/locales';
-import { THEME_MODES } from '@viome/constants/theme';
+import { LOCALES } from '@template/constants/locales';
+import { THEME_MODES } from '@template/constants/theme';
 
 export const DEFAULTS = {
   LOCALE: LOCALES.PT_BR,

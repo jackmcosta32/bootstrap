@@ -1,8 +1,8 @@
-import '@viome/ui/styles/global.scss';
+import '@template/ui/styles/global.scss';
 import React, { useEffect } from 'react';
-import '@viome/presentation/configs/i18n';
-import { sans, mono } from '@viome/ui/fonts';
-import '@viome/presentation/styles/global.scss';
+import '@template/presentation/configs/i18n';
+import { sans, mono } from '@template/ui/fonts';
+import '@template/presentation/styles/global.scss';
 import type { Decorator, Preview } from '@storybook/react';
 
 const fontDecorator: Decorator = (Story) => {

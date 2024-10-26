@@ -1,4 +1,4 @@
-import { cn } from '@viome/ui/utils/cn';
+import { cn } from '@template/ui/utils/cn';
 
 export interface <%= upperFirstName %>Props 
   extends React.HTMLAttributes<HTMLDivElement> {}

@@ -1,5 +1,5 @@
 {
-  "name": "@viome/ui-tools",
+  "name": "@template/ui-tools",
   "version": "0.0.1",
   "dependencies": {
     "@nx/devkit": "20.0.0",
