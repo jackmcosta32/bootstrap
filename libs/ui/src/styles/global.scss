@@ -79,3 +79,36 @@
     font-feature-settings: 'rlig' 1, 'calt' 1;
   }
 }
+
+@layer utilities {
+  .typography-h1 {
+    @apply text-4xl font-extrabold tracking-tight lg:text-5xl;
+  }
+  .typography-h2 {
+    @apply text-3xl font-semibold tracking-tight;
+  }
+  .typography-h3 {
+    @apply text-2xl font-semibold tracking-tight;
+  }
+  .typography-h4 {
+    @apply text-xl font-semibold tracking-tight;
+  }
+  .typography-p {
+    @apply leading-7;
+  }
+  .typography-lead {
+    @apply text-xl text-muted-foreground;
+  }
+  .typography-large {
+    @apply text-lg font-semibold;
+  }
+  .typography-small {
+    @apply text-sm font-medium leading-none;
+  }
+  .typography-muted {
+    @apply text-sm text-muted-foreground;
+  }
+  .typography-code {
+    @apply rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold;
+  }
+}

@@ -5,16 +5,16 @@ import { tv, type VariantProps } from 'tailwind-variants';
 const typographyVariants = tv({
   variants: {
     variant: {
-      h1: 'text-4xl font-extrabold tracking-tight lg:text-5xl',
-      h2: 'text-3xl font-semibold tracking-tight',
-      h3: 'text-2xl font-semibold tracking-tight',
-      h4: 'text-xl font-semibold tracking-tight',
-      p: 'leading-7',
-      lead: 'text-xl text-muted-foreground',
-      large: 'text-lg font-semibold',
-      small: 'text-sm font-medium leading-none',
-      muted: 'text-sm text-muted-foreground',
-      code: 'rounded bg-muted px-[0.3rem] py-[0.2rem] font-mono text-sm font-semibold',
+      h1: 'typography-h1',
+      h2: 'typography-h2',
+      h3: 'typography-h3',
+      h4: 'typography-h4',
+      p: 'typography-p',
+      lead: 'typography-lead',
+      large: 'typography-large',
+      small: 'typography-small',
+      muted: 'typography-muted',
+      code: 'typography-code',
     },
     fontFamily: {
       sans: 'font-sans',
