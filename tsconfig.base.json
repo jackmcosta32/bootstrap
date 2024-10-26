@@ -15,12 +15,13 @@
     "skipDefaultLibCheck": true,
     "baseUrl": ".",
     "paths": {
-      "@viome/ui/*": ["libs/ui/src/*"],
+      "@viome/constants/*": ["libs/constants/src/*"],
       "@viome/data/*": ["libs/data/src/*"],
       "@viome/domain/*": ["libs/domain/src/*"],
-      "@viome/constants/*": ["libs/constants/src/*"],
       "@viome/presentation/*": ["libs/presentation/src/*"],
-      "@viome/ui-tools": ["tools/ui-tools/src/index.ts"]
+      "@viome/test/*": ["libs/test/src/*"],
+      "@viome/ui-tools": ["tools/ui-tools/src/index.ts"],
+      "@viome/ui/*": ["libs/ui/src/*"]
     }
   },
   "exclude": ["node_modules", "tmp"]
