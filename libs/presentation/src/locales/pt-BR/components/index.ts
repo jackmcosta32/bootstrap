@@ -1,5 +1,5 @@
-import { oauthButton } from './oauth-button-locales';
+import { signIn } from './sign-in.locale';
 
 export const components = {
-  'oauth-button': oauthButton,
+  'sign-in-component': signIn,
 };

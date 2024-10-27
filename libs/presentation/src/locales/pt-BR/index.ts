@@ -1,15 +1,11 @@
-import { pages } from './pages';
-import { layouts } from './layouts';
+import { fields } from './fields.locale';
 import { components } from './components';
-import { fields } from './fields-locales';
-import { validations } from './validations-locales';
-import { placeholders } from './placeholders-locales';
+import { validations } from './validations.locale';
+import { placeholders } from './placeholders.locale';
 
 export default {
-  ...pages,
-  ...layouts,
   ...components,
-  fields: fields,
-  validations: validations,
-  placeholders: placeholders,
+  fields,
+  validations,
+  placeholders,
 };
