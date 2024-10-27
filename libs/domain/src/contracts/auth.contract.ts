@@ -1,3 +1,4 @@
+import type { TResult } from '../utils/result.util';
 import type { TAuthenticable } from '../models/auth.model';
 
 export interface TSignUpContract {
@@ -6,15 +7,19 @@ export interface TSignUpContract {
     password: string;
     lastName: string;
     firstName: string;
-  }): Promise<TAuthenticable> | TAuthenticable;
+  }): Promise<TResult<TAuthenticable>>;
 }
 
 export interface TSignInContract {
-  (params: { username: string; password: string }):
-    | Promise<TAuthenticable>
-    | TAuthenticable;
+  (params: { username: string; password: string }): Promise<
+    TResult<TAuthenticable>
+  >;
+}
+
+export interface TSignInWithGitHubContract {
+  (): Promise<TResult<TAuthenticable>>;
 }
 
 export interface TSignOutContract {
-  (): Promise<void> | void;
+  (): Promise<TResult<void>>;
 }
