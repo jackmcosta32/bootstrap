@@ -5,7 +5,7 @@ import { Slot } from '@radix-ui/react-slot';
 import { tv, type VariantProps } from 'tailwind-variants';
 
 const buttonVariants = tv({
-  base: 'relative inline-flex items-center justify-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
+  base: 'select-none relative text-center whitespace-nowrap rounded-md text-sm font-medium transition-colors focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:pointer-events-none disabled:opacity-50',
   variants: {
     variant: {
       default: 'bg-primary text-primary-foreground shadow hover:bg-primary/90',
@@ -63,7 +63,7 @@ const Button = React.forwardRef<HTMLButtonElement, ButtonProps>(
       >
         <span
           data-loading={isLoading}
-          className="data-[loading=true]:invisible whitespace-nowrap"
+          className="flex justify-center items-center data-[loading=true]:invisible whitespace-nowrap"
         >
           {children}
         </span>
