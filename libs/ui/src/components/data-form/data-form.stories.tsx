@@ -8,6 +8,7 @@ import { zodResolver } from '@hookform/resolvers/zod';
 import type { Meta, StoryObj } from '@storybook/react';
 import { CheckboxField } from './fields/checkbox-field';
 import { PasswordField } from './fields/password-field';
+import { DatePickerField } from './fields/data-picker-field';
 
 const BasicUsageComponent = (props: React.ComponentProps<typeof DataForm>) => {
   const GENDER_OPTIONS = [
@@ -20,6 +21,7 @@ const BasicUsageComponent = (props: React.ComponentProps<typeof DataForm>) => {
     username: z.string().email(),
     password: z.string().min(8),
     remember: z.boolean().default(false),
+    birth: z.date(),
     gender: z.enum(['male', 'female', 'others']).default('male'),
   });
 
@@ -39,6 +41,8 @@ const BasicUsageComponent = (props: React.ComponentProps<typeof DataForm>) => {
       />
 
       <SelectField name="gender" label="Gender" options={GENDER_OPTIONS} />
+
+      <DatePickerField name="birth" label="Birth" />
 
       <CheckboxField name="remember" label="Remember me" />
 

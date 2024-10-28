@@ -4,6 +4,7 @@ import type {
   FieldValues,
   UseFormReturn,
   SubmitHandler,
+  SubmitErrorHandler,
 } from 'react-hook-form';
 
 import { Form } from '../form';
@@ -11,28 +12,30 @@ import { cn } from '../../utils/cn';
 
 export interface DataFormProps<TFieldValues extends FieldValues>
   extends Omit<HTMLFormElement, 'onSubmit'> {
-  form: UseFormReturn<TFieldValues, unknown, undefined>;
-  onSubmit?: SubmitHandler<TFieldValues>;
+  form: UseFormReturn<TFieldValues>;
+  onValid?: SubmitHandler<TFieldValues>;
+  onInvalid?: SubmitErrorHandler<TFieldValues>;
 }
 
 export function DataForm<TFieldValues extends FieldValues>({
   form,
-  onSubmit,
+  onValid,
   children,
+  onInvalid,
   className,
 }: DataFormProps<TFieldValues>) {
   const handleOnValid: SubmitHandler<TFieldValues> = (data, event) => {
     event?.preventDefault();
 
-    if (typeof onSubmit !== 'function') return;
+    if (typeof onValid !== 'function') return;
 
-    return onSubmit(data, event);
+    return onValid(data, event);
   };
 
   return (
     <Form {...form}>
       <form
-        onSubmit={form.handleSubmit(handleOnValid)}
+        onSubmit={form.handleSubmit(handleOnValid, onInvalid)}
         className={cn('flex flex-col gap-4', className)}
       >
         {children}
