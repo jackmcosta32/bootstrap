@@ -28,6 +28,7 @@ export interface DatePickerFieldProps
 export const DatePickerField = ({
   name,
   label,
+  placeholder,
   className,
   description,
   ...rest
@@ -48,16 +49,16 @@ export const DatePickerField = ({
                 <Button
                   variant={'outline'}
                   className={cn(
-                    'pl-3 text-left font-normal',
+                    'pl-3 h-9 text-left font-normal border-input focus-within:ring-1 focus-within:ring-ring',
                     !field.value && 'text-muted-foreground'
                   )}
                 >
                   {field.value ? (
                     format(field.value, 'PPP')
                   ) : (
-                    <span>Pick a date</span>
+                    <span>{placeholder}</span>
                   )}
-                  <CalendarIcon className="ml-auto h-4 w-4 opacity-50" />
+                  <CalendarIcon className="ml-auto h-5 w-text-muted-foreground" />
                 </Button>
               </FormControl>
             </PopoverTrigger>
