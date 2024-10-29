@@ -4,6 +4,13 @@ export const fields = {
   'first-name-field': 'Nome',
   'last-name-field': 'Sobrenome',
   'username-field': 'E-mail ou usuário',
+  'birthday-field': 'Data de nascimento',
   'remember-field': 'Manter-me conectado',
   'confirm-password-field': 'Confirmar senha',
+  'gender-field': 'Gênero',
+  'other-option': 'Outro',
+  'male-option': 'Masculino',
+  'female-option': 'Feminino',
+  'non-binary-option': 'Näo-binário',
+  'not-informed-option': 'Prefiro não responder',
 };

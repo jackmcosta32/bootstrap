@@ -1,7 +1,7 @@
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { cn } from '@template/ui/utils/cn';
-import signInStyles from './sign-in-form.module.scss';
+import authStyles from '../auth.module.scss';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Button } from '@template/ui/components/button';
 import { DataForm } from '@template/ui/components/data-form';
@@ -26,7 +26,7 @@ export const SignInForm = ({
   className,
   onSignInWithGitHub,
 }: SignInFormProps) => {
-  const { t } = useTranslation(['sign-in-component', 'fields']);
+  const { t } = useTranslation(['sign-in-form-component', 'fields']);
 
   const form = useForm({
     resolver: zodResolver(schema),
@@ -46,19 +46,19 @@ export const SignInForm = ({
 
       <PasswordField name="password" label={t('fields:password-field')} />
 
-      <Button type="submit">{t('sign-in-component:submit-button')}</Button>
+      <Button type="submit">{t('submit-button')}</Button>
 
       {hasOauthMethods && (
-        <div className={signInStyles.separator}>
+        <div className={authStyles.separator}>
           <span className="bg-background typography-small">
-            {t('sign-in-component:sign-in-alternative')}
+            {t('sign-in-alternative')}
           </span>
         </div>
       )}
 
       {onSignInWithGitHub && (
         <Button type="button" variant="outline" className="gap-1">
-          {t('sign-in-component:github-button')}
+          {t('github-button')}
         </Button>
       )}
     </DataForm>
