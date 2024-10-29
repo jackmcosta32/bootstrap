@@ -10,10 +10,10 @@ import {
   FormDescription,
 } from '../../form';
 
+import { useState } from 'react';
 import { Input } from '../../input';
 import { Button } from '../../button';
 import { Eye, EyeOff } from 'lucide-react';
-import { useState } from 'react';
 
 export interface PasswordFieldProps
   extends React.InputHTMLAttributes<HTMLInputElement> {
@@ -57,8 +57,9 @@ export const PasswordField = ({
             >
               <Button
                 size="icon"
+                type="button"
                 variant="ghost"
-                className="h-auto"
+                className="h-auto mr-2"
                 onClick={toggleFieldType}
               >
                 {fieldIcon}
