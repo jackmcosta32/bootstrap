@@ -1,3 +1,5 @@
+'use client';
+
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { cn } from '@template/ui/utils/cn';
@@ -46,7 +48,13 @@ export const SignInForm = ({
 
       <PasswordField name="password" label={t('fields:password-field')} />
 
-      <Button type="submit">{t('submit-button')}</Button>
+      <Button
+        type="submit"
+        disabled={!form.formState.isValid}
+        isLoading={form.formState.isLoading}
+      >
+        {t('submit-button')}
+      </Button>
 
       {hasOauthMethods && (
         <div className={authStyles.separator}>

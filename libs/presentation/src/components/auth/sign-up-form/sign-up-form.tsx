@@ -1,3 +1,5 @@
+'use client';
+
 import { z } from 'zod';
 import { useForm } from 'react-hook-form';
 import { cn } from '@template/ui/utils/cn';
@@ -86,7 +88,13 @@ export const SignUpForm = ({ onSignUp, className }: SignUpFormProps) => {
         ]}
       />
 
-      <Button type="submit">{t('submit-button')}</Button>
+      <Button
+        type="submit"
+        disabled={!form.formState.isValid}
+        isLoading={form.formState.isLoading}
+      >
+        {t('submit-button')}
+      </Button>
     </DataForm>
   );
 };
