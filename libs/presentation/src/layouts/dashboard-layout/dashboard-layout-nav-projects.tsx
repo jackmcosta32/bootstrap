@@ -44,7 +44,7 @@ export function DashboardLayoutNavProjects({
           <SidebarMenuItem key={item.name}>
             <SidebarMenuButton asChild>
               <a href={item.url}>
-                <item.icon />
+                <item.icon className="h-4" />
                 <span>{item.name}</span>
               </a>
             </SidebarMenuButton>
@@ -60,17 +60,17 @@ export function DashboardLayoutNavProjects({
                 side={isMobile ? 'bottom' : 'right'}
                 align={isMobile ? 'end' : 'start'}
               >
-                <DropdownMenuItem>
-                  <Folder className="text-muted-foreground" />
+                <DropdownMenuItem className="gap-1">
+                  <Folder className="text-muted-foreground h-4" />
                   <span>View Project</span>
                 </DropdownMenuItem>
-                <DropdownMenuItem>
-                  <Share className="text-muted-foreground" />
+                <DropdownMenuItem className="gap-1">
+                  <Share className="text-muted-foreground h-4" />
                   <span>Share Project</span>
                 </DropdownMenuItem>
                 <DropdownMenuSeparator />
-                <DropdownMenuItem>
-                  <Trash2 className="text-muted-foreground" />
+                <DropdownMenuItem className="gap-1">
+                  <Trash2 className="text-muted-foreground h-4" />
                   <span>Delete Project</span>
                 </DropdownMenuItem>
               </DropdownMenuContent>
