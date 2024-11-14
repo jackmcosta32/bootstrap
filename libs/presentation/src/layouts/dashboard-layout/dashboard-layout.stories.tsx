@@ -3,7 +3,7 @@ import { DashboardLayout } from './dashboard-layout';
 
 const Story: Meta<typeof DashboardLayout> = {
   component: DashboardLayout,
-  title: 'Components/Presentation/Layouts/DashboardLayout',
+  title: 'Layouts/Presentation/DashboardLayout',
 };
 
 export default Story;

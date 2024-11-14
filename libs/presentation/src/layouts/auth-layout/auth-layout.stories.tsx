@@ -3,7 +3,7 @@ import { AuthLayout } from './auth-layout';
 
 const Story: Meta<typeof AuthLayout> = {
   component: AuthLayout,
-  title: 'Components/Presentation/Layouts/AuthLayout',
+  title: 'Layouts/Presentation/AuthLayout',
 };
 
 export default Story;
