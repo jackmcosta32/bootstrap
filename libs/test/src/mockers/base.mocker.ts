@@ -5,23 +5,8 @@ type TRange = {
   min?: number;
 };
 
-export abstract class BaseMock<TModel> {
+export abstract class BaseMocker<TModel> {
   protected factory = faker;
-
-  protected randomEntry<TValue>(
-    value: Array<TValue> | Record<string, TValue>
-  ): TValue {
-    const arrayValue = Array.isArray(value) ? value : Object.values(value);
-
-    const randomIndex = this.factory.number.int({
-      max: arrayValue.length - 1,
-      min: 0,
-    });
-
-    const randomEntry = arrayValue[randomIndex];
-
-    return randomEntry;
-  }
 
   public mockMany(
     quantity?: number | TRange,
