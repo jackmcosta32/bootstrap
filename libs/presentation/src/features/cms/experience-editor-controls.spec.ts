@@ -1,16 +1,16 @@
 import {
-  ExperienceEditor,
-  type TExperienceEditorConstructor,
-} from './experience-editor-controls';
+  ExperienceComponentTree,
+  type TExperienceComponentTreeConstructor,
+} from './experience-component-tree';
 import { ExperienceComponentMocker } from '@template/test/mockers/experience-component.mocker';
 
 const experienceComponentMocker = new ExperienceComponentMocker();
 
-const makeSut = (params?: TExperienceEditorConstructor) => {
-  return new ExperienceEditor(params);
+const makeSut = (params?: TExperienceComponentTreeConstructor) => {
+  return new ExperienceComponentTree(params);
 };
 
-describe('ExperienceEditorControls', () => {
+describe('Features - CMS - ExperienceComponentTree', () => {
   describe('when attempting to add a new component...', () => {
     it('should be able to add new components to the component tree', () => {
       const sut = makeSut();

@@ -3,14 +3,14 @@ import type {
   TExperienceComponentTree,
 } from '@template/domain/models/experience.model';
 
-export interface TExperienceEditorConstructor {
+export interface TExperienceComponentTreeConstructor {
   componentTree?: TExperienceComponentTree;
 }
 
-export class ExperienceEditor {
+export class ExperienceComponentTree {
   private componentTree: TExperienceComponentTree;
 
-  constructor(params?: TExperienceEditorConstructor) {
+  constructor(params?: TExperienceComponentTreeConstructor) {
     this.componentTree = params?.componentTree ?? {};
   }
 
