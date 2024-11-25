@@ -21,4 +21,4 @@
 
 ### Experience History Manager:
 
-Uses a two pointer logic to traverse on a array list, basically acting like a rounded buffer. The idea for this approach is to allow us to easily undo and re-do changes on the editor by simply updating a pointer value.
+Uses a pointer logic to traverse on a array list. The idea for this approach is to allow us to easily undo and re-do changes on the editor by simply updating a pointer value.

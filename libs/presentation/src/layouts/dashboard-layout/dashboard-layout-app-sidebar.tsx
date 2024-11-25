@@ -152,9 +152,9 @@ const data = {
   ],
 };
 
-export function DashboardLayoutAppSidebar({
-  ...props
-}: React.ComponentProps<typeof Sidebar>) {
+export function DashboardLayoutAppSidebar(
+  props: React.ComponentProps<typeof Sidebar>
+) {
   return (
     <Sidebar variant="inset" {...props}>
       <SidebarHeader>

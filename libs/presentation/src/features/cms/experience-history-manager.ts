@@ -1,3 +1,5 @@
+// How can i refactor this to avoid giving it the responsibility to execute the commands?
+
 export interface TExperienceCommand {
   execute(): void;
   undo(): void;

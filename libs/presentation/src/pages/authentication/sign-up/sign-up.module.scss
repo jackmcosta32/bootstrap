@@ -1,0 +1,24 @@
+.separator {
+  display: flex;
+  position: relative;
+  align-content: center;
+  justify-content: center;
+  width: theme('width.full');
+
+  & > span {
+    z-index: 1;
+    display: inline-block;
+    padding: 0px theme('padding.3');
+  }
+
+  &::before {
+    content: '';
+    top: 50%;
+    left: 0px;
+    right: 0px;
+    height: 1px;
+    display: block;
+    position: absolute;
+    background-color: theme('colors.neutral.400');
+  }
+}

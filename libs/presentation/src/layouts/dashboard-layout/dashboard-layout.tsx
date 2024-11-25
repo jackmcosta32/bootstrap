@@ -1,3 +1,5 @@
+'use client';
+
 import { DashboardLayoutHeader } from './dashboard-layout-header';
 import { DashboardLayoutAppSidebar } from './dashboard-layout-app-sidebar';
 import { SidebarInset, SidebarProvider } from '@template/ui/components/sidebar';

@@ -73,7 +73,7 @@ export const DroppableArea = ({
       ref={setNodeRef}
       data-is-over={isOver}
       className={cn(
-        'transition-colors border-2 border-dashed border-border rounded-md hover:border-cyan-500 hover:bg-cyan-100/20 data-[is-over="true"]:border-cyan-500 data-[is-over="true"]:bg-cyan-100/20 focus:border-indigo-500',
+        'transition-colors border-2 border-dashed border-border rounded-md hover:border-primary/50 hover:bg-primary/10 data-[is-over="true"]:border-primary data-[is-over="true"]:bg-primary/10',
         className
       )}
     >
