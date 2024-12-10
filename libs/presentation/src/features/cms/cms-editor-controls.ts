@@ -1,16 +1,11 @@
-// How can i refactor this to avoid giving it the responsibility to execute the commands?
+import type { TCmsCommand } from '@template/domain/models/cms.model';
 
-export interface TExperienceCommand {
-  execute(): void;
-  undo(): void;
-}
-
-export class ExperienceHistoryManager {
+export class CmsEditorControls {
   private historyPointer = 0;
 
-  private history: TExperienceCommand[] = [];
+  private history: TCmsCommand[] = [];
 
-  public push(command: TExperienceCommand) {
+  public push(command: TCmsCommand) {
     command.execute();
 
     if (this.historyPointer !== this.history.length) {
@@ -35,9 +30,9 @@ export class ExperienceHistoryManager {
   public redo() {
     if (this.historyPointer === this.history.length) return;
 
-    const nextExperienceCommand = this.history[this.historyPointer];
+    const nexTCmsCommand = this.history[this.historyPointer];
 
-    nextExperienceCommand.execute();
+    nexTCmsCommand.execute();
 
     this.historyPointer += 1;
   }

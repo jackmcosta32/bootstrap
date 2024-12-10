@@ -19,6 +19,10 @@
 
 ## Implementation Details:
 
-### Experience History Manager:
+### CMS Editor Controls:
 
 Uses a pointer logic to traverse on a array list. The idea for this approach is to allow us to easily undo and re-do changes on the editor by simply updating a pointer value.
+
+### CMS Component Tree:
+
+- **Shallow Delete**: Deletes a node by toggling the isDeleted flag on the CMS Component. This is useful for enhancing the performance and memory management for undo/re-do operations.

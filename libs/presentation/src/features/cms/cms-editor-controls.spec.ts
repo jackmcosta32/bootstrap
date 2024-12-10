@@ -1,23 +1,17 @@
-// TODO: Rename to Experiment Editor Controls
+import { CmsEditorControls } from './cms-editor-controls';
+import type { TCmsCommand } from '@template/domain/models/cms.model';
 
-import {
-  type TExperienceCommand,
-  ExperienceHistoryManager,
-} from './experience-history-manager';
-
-const mockCommand = (
-  params?: Partial<TExperienceCommand>
-): TExperienceCommand => ({
+const mockCommand = (params?: Partial<TCmsCommand>): TCmsCommand => ({
   undo: jest.fn(),
   execute: jest.fn(),
   ...params,
 });
 
 const makeSut = () => {
-  return new ExperienceHistoryManager();
+  return new CmsEditorControls();
 };
 
-describe('Feature - CMS - ExperienceHistoryManager', () => {
+describe('Feature - CMS - CmsEditorControls', () => {
   describe('when attempting to push changes to history...', () => {
     it('should execute the command', () => {
       const sut = makeSut();

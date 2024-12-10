@@ -1,21 +1,21 @@
 import {
-  ExperienceComponentTree,
-  type TExperienceComponentTreeConstructor,
-} from './experience-component-tree';
-import { ExperienceComponentMocker } from '@template/test/mockers/experience-component.mocker';
+  CmsComponentTree,
+  type TCmsComponentTreeConstructor,
+} from './cms-component-tree';
+import { CmsComponentMocker } from '@template/test/mockers/cms-component.mocker';
 
-const experienceComponentMocker = new ExperienceComponentMocker();
+const cmsComponentMocker = new CmsComponentMocker();
 
-const makeSut = (params?: TExperienceComponentTreeConstructor) => {
-  return new ExperienceComponentTree(params);
+const makeSut = (params?: TCmsComponentTreeConstructor) => {
+  return new CmsComponentTree(params);
 };
 
-describe('Features - CMS - ExperienceComponentTree', () => {
+describe('Features - CMS - CmsComponentTree', () => {
   describe('when attempting to add a new component...', () => {
     it('should be able to add new components to the component tree', () => {
       const sut = makeSut();
 
-      const component = experienceComponentMocker.mockOne();
+      const component = cmsComponentMocker.mockOne();
 
       sut.addComponent(component.id, component);
 
@@ -25,8 +25,8 @@ describe('Features - CMS - ExperienceComponentTree', () => {
     it('should be able to add nested components to the component tree', () => {
       const sut = makeSut();
 
-      const parentComponent = experienceComponentMocker.mockOne();
-      const childComponent = experienceComponentMocker.mockOne();
+      const parentComponent = cmsComponentMocker.mockOne();
+      const childComponent = cmsComponentMocker.mockOne();
 
       sut.addComponent(parentComponent.id, parentComponent);
       sut.addComponent(childComponent.id, childComponent, parentComponent.id);
@@ -40,7 +40,7 @@ describe('Features - CMS - ExperienceComponentTree', () => {
     it('should be able to delete a component from the component tree', () => {
       const sut = makeSut();
 
-      const component = experienceComponentMocker.mockOne();
+      const component = cmsComponentMocker.mockOne();
 
       sut.addComponent(component.id, component);
       sut.deleteComponent(component.id);
@@ -52,9 +52,9 @@ describe('Features - CMS - ExperienceComponentTree', () => {
       it('should delete its children', () => {
         const sut = makeSut();
 
-        const parentComponent = experienceComponentMocker.mockOne();
-        const firstChildComponent = experienceComponentMocker.mockOne();
-        const secondChildComponent = experienceComponentMocker.mockOne();
+        const parentComponent = cmsComponentMocker.mockOne();
+        const firstChildComponent = cmsComponentMocker.mockOne();
+        const secondChildComponent = cmsComponentMocker.mockOne();
 
         sut.addComponent(parentComponent.id, parentComponent);
 
@@ -86,7 +86,7 @@ describe('Features - CMS - ExperienceComponentTree', () => {
       const sut = makeSut();
 
       const [childComponent, firstParentComponent, secondParentComponent] =
-        experienceComponentMocker.mockMany(3);
+        cmsComponentMocker.mockMany(3);
 
       sut.addComponent(firstParentComponent.id, firstParentComponent);
 

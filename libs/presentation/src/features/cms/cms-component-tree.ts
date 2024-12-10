@@ -1,20 +1,42 @@
 import type {
-  TExperienceComponent,
-  TExperienceComponentTree,
-} from '@template/domain/models/experience.model';
+  TCmsComponent,
+  TCmsComponentTree,
+} from '@template/domain/models/cms.model';
 
-export interface TExperienceComponentTreeConstructor {
-  componentTree?: TExperienceComponentTree;
+const ROOT_NODE_ID = 'root';
+
+export interface TCmsComponentTreeConstructor {
+  componentTree?: TCmsComponentTree;
 }
 
-export class ExperienceComponentTree {
-  private componentTree: TExperienceComponentTree;
+export class CmsComponentTree {
+  private componentTree: TCmsComponentTree;
 
-  constructor(params?: TExperienceComponentTreeConstructor) {
-    this.componentTree = params?.componentTree ?? {};
+  constructor(params?: TCmsComponentTreeConstructor) {
+    if (params?.componentTree) {
+      this.componentTree = params?.componentTree;
+
+      return;
+    }
+
+    const rootNode: TCmsComponent = {
+      type: 'root',
+      label: 'root',
+      id: ROOT_NODE_ID,
+    };
+
+    this.componentTree = { [ROOT_NODE_ID]: rootNode };
+  }
+
+  public restoreComponent(id: string) {
+    this.componentTree[id].isDeleted = false;
   }
 
   public deleteComponent(id: string) {
+    this.componentTree[id].isDeleted = true;
+  }
+
+  public hardDeleteComponent(id: string) {
     const componentNode = this.componentTree[id];
 
     if (componentNode.childrenId) {
@@ -62,11 +84,29 @@ export class ExperienceComponentTree {
 
   public addComponent(
     id: string,
-    component: TExperienceComponent,
+    component: TCmsComponent,
     parentId?: string,
     order?: number
   ) {
     this.componentTree[id] = component;
-    this.moveComponent(id, parentId, order);
+    this.moveComponent(id, parentId ?? ROOT_NODE_ID, order);
+  }
+
+  private viewNode(id: string) {
+    const currentNode = this.componentTree[id]
+    
+    if (currentNode.isDeleted) return;
+
+    if (!currentNode.childrenId) return currentNode;
+
+    const 
+
+    rootNode.childrenId?.reduce((acc, childId) => {
+      const child = this.componentTree[childId]
+
+      if (child.isDeleted) return acc
+      
+      
+    }, [])
   }
 }
